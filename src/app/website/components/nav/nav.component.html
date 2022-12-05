@@ -1,0 +1,28 @@
+<div class="show-mobile">
+    <div>
+        <button (click)="toggleMenu()" >
+            <img src="./assets/svg/icon_menu.svg" alt="">
+        </button>
+        <div class="side-menu" [class.active]="activeMenu" >
+            <button (click)="toggleMenu()" >
+                Close
+            </button>
+            <ul>
+                <li><a routerLink="home">Home</a></li>
+                <li><a href="">Top 5</a></li>
+                <li><a href="">Main Page</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="hide-mobile">
+    <div>
+        <nav>
+            <ul>
+                <li><a routerLink="home">Home</a></li>
+                <li><a href="">Top 5</a></li>
+                <li><a href="">Main Page</a></li>
+            </ul>
+        </nav>
+    </div>
+</div>

@@ -3,28 +3,20 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NavComponent } from './components/nav/nav.component';
-import { ListComponent } from './components/list/list.component';
-import { ArticlesComponent } from './components/articles/articles.component';
-import { ArticleComponent } from './components/article/article.component';
-import { SwiperTopArticleComponent } from './components/swiper-top-article/swiper-top-article.component';
-import { SwiperModule } from 'swiper/angular';
 import { HttpClientModule } from '@angular/common/http';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavComponent,
-    ListComponent,
-    ArticlesComponent,
-    ArticleComponent,
-    SwiperTopArticleComponent
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    SwiperModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
