@@ -28,21 +28,26 @@ export class DataTableComponent implements AfterViewInit {
 
   ngOnInit(){
     this.getWorks();
+    console.log('Datasource',this.dataSource)
   }
 
   ngAfterViewInit() {
-    console.log('afete',this.dataSource);
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
+    console.log('After init');
+    console.log('paginator',this.paginator);
+    console.log('sort',this.sort)
   }
 
   getWorks(){
-    this.worksService.getAllWorks().subscribe(data =>{
+    console.log('paginator',this.paginator);
+    console.log('sort',this.sort)
+    this.worksService.getAllWorks(5,5).subscribe(data =>{
       this.apiResponse = data;
       if(data.message.items.length > 0){
-        console.log('APi',this.apiResponse.message.items);
+        // console.log('APi',this.apiResponse.message.items);
         this.works = this.apiResponse.message.items;
-        console.log('works',this.works);
+        // console.log('works',this.works);
       }
     });
   }
