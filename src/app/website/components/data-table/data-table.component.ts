@@ -12,10 +12,10 @@ import { ApiResponse } from 'src/app/models/apiResponse.model';
   styleUrls: ['./data-table.component.scss']
 })
 export class DataTableComponent implements AfterViewInit {
-  data: Works[] = [];
+  works: Works[] = [];
   apiResponse: ApiResponse | null = null; 
 
-  displayedColumns: string[] = ['institution', 'title', 'publisher', 'URL'];
+  displayedColumns: string[] = ['publisher', 'title', 'type', 'URL'];
   dataSource: MatTableDataSource<Works>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -23,7 +23,7 @@ export class DataTableComponent implements AfterViewInit {
 
   constructor(private worksService: WorksService){
     // Assign the data to the data source for the table to render
-    this.dataSource = new MatTableDataSource(this.data);
+    this.dataSource = new MatTableDataSource(this.works);
   }
 
   ngOnInit(){
@@ -41,8 +41,8 @@ export class DataTableComponent implements AfterViewInit {
       this.apiResponse = data;
       if(data.message.items.length > 0){
         console.log('APi',this.apiResponse.message.items);
-        this.data = this.apiResponse.message.items;
-        console.log('data',this.data);
+        this.works = this.apiResponse.message.items;
+        console.log('works',this.works);
       }
     });
   }
