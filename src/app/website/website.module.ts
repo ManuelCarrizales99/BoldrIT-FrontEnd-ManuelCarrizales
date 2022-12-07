@@ -5,8 +5,6 @@ import { WebsiteRoutingModule } from './website-routing.module';
 import { HomeComponent } from './pages/home/home.component';
 import { NavComponent } from './components/nav/nav.component';
 import { ListComponent } from './components/list/list.component';
-import { ArticlesComponent } from './components/articles/articles.component';
-import { ArticleComponent } from './components/article/article.component';
 import { SwiperTopArticleComponent } from './components/swiper-top-article/swiper-top-article.component';
 import { SwiperModule } from 'swiper/angular';
 import { LayoutComponent } from './components/layout/layout.component';
@@ -17,17 +15,19 @@ import {MatFormFieldModule, MAT_FORM_FIELD_DEFAULT_OPTIONS} from '@angular/mater
 import {MatInputModule} from '@angular/material/input';
 import {MatMenuModule} from '@angular/material/menu';
 import { DataTableComponent } from './components/data-table/data-table.component';
+import { WorksComponent } from './components/works/works.component';
+import { WorkComponent } from './components/work/work.component';
 
 @NgModule({
   declarations: [
     HomeComponent,
     NavComponent,
     ListComponent,
-    ArticlesComponent,
-    ArticleComponent,
     SwiperTopArticleComponent,
     LayoutComponent,
-    DataTableComponent
+    DataTableComponent,
+    WorksComponent,
+    WorkComponent
   ],
   imports: [
     CommonModule,
