@@ -10,19 +10,19 @@
         <!-- publisher Column -->
         <ng-container matColumnDef="publisher">
         <th mat-header-cell *matHeaderCellDef mat-sort-header> Publisher </th>
-        <td mat-cell *matCellDef="let row"> {{row.publisher}} </td>
+        <td mat-cell *matCellDef="let row"> {{row.publisher ? row.publisher : "PUBLISHER NOT FOUND"}} </td>
         </ng-container>
     
         <!-- title Column -->
         <ng-container matColumnDef="title">
         <th mat-header-cell *matHeaderCellDef mat-sort-header> Title </th>
-        <td mat-cell *matCellDef="let row"> {{ row.title ? row.title[0] : "Title not found" }} </td>
+        <td mat-cell *matCellDef="let row"> {{ row.title ? row.title[0] : "TITLE NOT FOUND" }} </td>
         </ng-container>
     
         <!-- type Column -->
         <ng-container matColumnDef="type">
         <th mat-header-cell *matHeaderCellDef mat-sort-header> Type </th>
-        <td mat-cell *matCellDef="let row"> {{row.type}} </td>
+        <td mat-cell *matCellDef="let row"> {{row.type ? row.type : "TYPE NOT FOUND"}} </td>
         </ng-container>
     
         <!-- URL Column -->

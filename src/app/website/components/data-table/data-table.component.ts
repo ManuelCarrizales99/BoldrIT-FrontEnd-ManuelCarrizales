@@ -28,6 +28,7 @@ export class DataTableComponent implements AfterViewInit {
 
   ngOnInit(){
     this.getWorks();
+    console.log('Datasource',this.dataSource)
   }
 
   ngAfterViewInit() {
@@ -36,7 +37,9 @@ export class DataTableComponent implements AfterViewInit {
   }
 
   getWorks(){
-    this.worksService.getAllWorks().subscribe(data =>{
+    console.log('paginator',this.paginator);
+    console.log('sort',this.sort)
+    this.worksService.getAllWorks(5,5).subscribe(data =>{
       this.apiResponse = data;
       if(data.message.items.length > 0){
         this.works = this.apiResponse.message.items; 
