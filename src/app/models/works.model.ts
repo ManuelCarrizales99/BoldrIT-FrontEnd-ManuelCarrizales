@@ -8,13 +8,13 @@ export interface Works{
     edition_number: string,
     group_title: string[],
     reference_count: number,
-    publisher:	string
+    publisher:	string,
     issue: string,
-    isbn_type: WorkISSNType[]
-    license: WorkLicense[]
-    funder: WorkFunder[]
+    isbn_type: WorkISSNType[],
+    license: WorkLicense[],
+    funder: WorkFunder[],
     content_domain:	WorkDomain,
-    chair: Author[]
+    chair: Author[],
     short_container_title:	string,
     accepted: DateParts,
     content_updated: DateParts,
@@ -37,35 +37,35 @@ export interface Works{
     content_created: DateParts,
     published_online: DateParts,
     reference: Reference,
-    container_title: string[]
+    container_title: string[],
     review: WorkReview,
-    original_title: string[]
+    original_title: string[],
     language: string,
-    link: WorkLink[]
+    link: WorkLink[],
     deposited:	Date,
     score: number,
     degree:	string,
-    subtitle: string[]
-    translator: Author[]
+    subtitle: string[],
+    translator: Author[],
     free_to_read: WorkFreeToRead,
-    editor: Author[]
+    editor: Author[],
     component_number: string,
-    short_title: string[]
+    short_title: string[],
     issued: DateParts,
-    ISBN: string[]
+    ISBN: string[],
     references_count: number,
     part_number: string,
     journal_issue: WorkJournalIssue,
     alternative_id: string[],
     URL: string, 
-    archive: []
+    archive: [],
     relation: WorkRelation,
-    ISSN: string[]
-    issn_type: WorkISSNType[]
-    subject: string[]
+    ISSN: string[],
+    issn_type: WorkISSNType[],
+    subject: string[],
     published_other: DateParts,
     published: DateParts,
-    assertion: []
+    assertion: [],
     subtype: string,
     article_number:	string,
 }

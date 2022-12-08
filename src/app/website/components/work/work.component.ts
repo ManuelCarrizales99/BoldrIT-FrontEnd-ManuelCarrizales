@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Works } from 'src/app/models/works.model';
 
 
 @Component({
@@ -7,6 +8,95 @@ import { Component } from '@angular/core';
   styleUrls: ['./work.component.scss']
 })
 export class WorkComponent {
+
+  @Input() work: Works = {
+    institution: {
+      name: '',
+      place: [],
+      department: [],
+      acronym: [],
+    },
+    indexed: {
+      date_parts:	[[0]],
+      date_time:	'',
+      timestamp:	0,
+    },
+    posted:	DateParts,
+    publisher_location:'',
+    update_to: WorkUpdate[],
+    standards_body: WorkStandardsBody[],
+    edition_number:'',
+    group_title:[],
+    reference_count: 0,
+    publisher:'',
+    issue:'',
+    isbn_type: WorkISSNType[],
+    license: WorkLicense[],
+    funder: WorkFunder[],
+    content_domain:	WorkDomain,
+    chair: Author[],
+    short_container_title:'',
+    accepted: DateParts,
+    content_updated: DateParts,
+    published_print: DateParts,
+    abstract:'',
+    DOI:'',
+    type:'',
+    created: {
+      date_parts:	[[0]],
+      date_time:	'',
+      timestamp:	0,
+    },
+    approved: DateParts,
+    page:'',
+    update_policy:'',
+    source:'',
+    is_referenced_by_count: 0,
+    title:[],
+    prefix:'',
+    volume:'',
+    clinical_trial_number: WorkClinicalTrial[],
+    author:	Author[],
+    member:'',
+    content_created: DateParts,
+    published_online: DateParts,
+    reference: Reference,
+    container_title:[],
+    review: WorkReview,
+    original_title:[],
+    language:'',
+    link: WorkLink[],
+    deposited:	{
+      date_parts:	[[0]],
+      date_time:	'',
+      timestamp:	0,
+    },
+    score: 0,
+    degree:'',
+    subtitle:[],
+    translator: Author[],
+    free_to_read: WorkFreeToRead,
+    editor: Author[],
+    component_number:'',
+    short_title:[],
+    issued: DateParts,
+    ISBN:[],
+    references_count: 0,
+    part_number:'',
+    journal_issue: WorkJournalIssue,
+    alternative_id:[],
+    URL:'', 
+    archive: [],
+    relation: WorkRelation,
+    ISSN:[],
+    issn_type: WorkISSNType[],
+    subject:[],
+    published_other: DateParts,
+    published: DateParts,
+    assertion: [],
+    subtype:'',
+    article_number:'',
+  };
 
 
 }
