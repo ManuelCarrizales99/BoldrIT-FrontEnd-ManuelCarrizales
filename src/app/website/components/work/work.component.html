@@ -1,8 +1,13 @@
-<div class="card" style="width: 18rem;">
-    <img src="./assets/images/KyC.jpeg" class="card-img-top" alt="...">
+<div class="card">
+    <!-- <img src="./assets/images/KyC.jpeg" class="card-img-top" alt="..."> -->
     <div class="card-body">
-      <h5 class="card-title"> {{ work.title != null ? work.title[0] : 'TITLE NOT FOUND' }} </h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
+      <p class="card-title">{{ work.title != null ? work.title[0] : 'TITLE NOT FOUND' }} </p>
+      <p class="card-text">Publisher: {{ work.publisher != null ? work.publisher : 'PUBLISHER NOT FOUND' }} </p>
+      <p class="card-text">Type: {{ work.type != null ? work.type : 'TYPE NOT FOUND' }} </p>
+      <p class="card-text">Number of pages: {{ work.page != null ? work.page : 'PAGES NOT FOUND' }} </p>
+      <!-- Button trigger modal -->
+      <button type="button" (click)="onShowDetail()" class="btn btn-primary">
+        See more info.
+      </button>
     </div>
-  </div>
+</div>

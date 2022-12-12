@@ -1,8 +1,7 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Agency } from '../models/agency.model';
-import { ApiResponse } from '../models/apiResponse.model';
-import { Works } from '../models/works.model';
+import { ApiResponse, ApiResponseWork } from '../models/apiResponse.model';
 
 @Injectable({
   providedIn: 'root'
@@ -22,7 +21,7 @@ export class WorksService {
   }
 
   getWorkDoi(doi: string){
-    return this.http.get<Works>(`${this.apiUrl}/${doi}`)
+    return this.http.get<ApiResponseWork>(`${this.apiUrl}/${doi}`)
   }
 
   getWorkDoiAgency(doi:string){

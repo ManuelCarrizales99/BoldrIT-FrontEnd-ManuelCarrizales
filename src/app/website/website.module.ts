@@ -16,6 +16,8 @@ import {MatMenuModule} from '@angular/material/menu';
 import { DataTableComponent } from './components/data-table/data-table.component';
 import { WorksComponent } from './components/works/works.component';
 import { WorkComponent } from './components/work/work.component';
+import { WorkDetailComponent } from './components/work-detail/work-detail.component';
+import { TableComponent } from './pages/table/table.component';
 @NgModule({
   declarations: [
     HomeComponent,
@@ -25,6 +27,8 @@ import { WorkComponent } from './components/work/work.component';
     DataTableComponent,
     WorksComponent,
     WorkComponent,
+    WorkDetailComponent,
+    TableComponent
   ],
   imports: [
     CommonModule,

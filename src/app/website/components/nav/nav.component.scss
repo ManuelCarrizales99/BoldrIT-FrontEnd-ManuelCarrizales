@@ -30,15 +30,13 @@
 }
 .hide-mobile {
   display: none;
+  padding-top: 1em;
   box-shadow: 0px 2px 5px rgb(black, .2);
   div {
     padding: 1em;
     display: flex;
     justify-content: space-between;
     align-items: center;
-  }
-  .logo {
-    margin-right: 1em;
   }
   nav {
     display: flex;
@@ -52,8 +50,8 @@
         text-decoration: none;
         padding: .2em .8em;
         &.active{
-          border: 1px solid #acd9b2;
-          color: #acd9b2;
+          border: 1px solid #0004ff;
+          color: #0004ff;
           border-radius: 5px;
         }
       }

@@ -1,0 +1,23 @@
+<div class="card">
+    <h5 class="card-header">{{ work.container_title ? work.container_title[0] : ' NOT FOUND' }}</h5>
+    <div class="card-body">
+        <h3 class="card-title">
+            {{ work.title ? work.title[0] : 'TITLE NOT FOUND' }}
+        </h3>
+        <div class="abstract">
+            <p class="card-text">{{ work.abstract ? work.abstract : 'ABSTRACT NOT FOUND' }}</p>
+            <p class="card-text">Number of pages: {{ work.page ? work.page : 'PAGES NOT FOUND' }}</p>
+        </div>
+        <p>
+            Publisher: {{ work.publisher ? work.publisher : 'PUBLISHER NOT FOUND' }}
+        </p>
+        <p>Subject(s)</p>
+        <ul>
+            <li *ngFor="let subject of work.subject"> {{ subject }} </li>
+        </ul>
+        <a [href]="work.URL" class="btn btn-primary"> Work page</a>
+    </div>
+    <div class="card-footer text-muted">
+        {{ work.created ? work.created.date_time` : 'DATE NOT FOUND' }}
+      </div>
+</div>

@@ -1,3 +1,11 @@
 <div class="worksGrid">
-    <app-work *ngFor="let work of works" [work]="work"></app-work>
+    <app-work (showWork)="onShowDetail($event)" *ngFor="let work of works" [work]="work"></app-work>
+    <button class="btn btn-secondary" (click)="onLoadMore()"> Load More</button>
+</div>
+
+
+<div class="work-detail" [class.active]="modalActive" >
+    <div *ngIf="modalActive">
+        <app-work-detail [work]="work"></app-work-detail>
+    </div>
 </div>

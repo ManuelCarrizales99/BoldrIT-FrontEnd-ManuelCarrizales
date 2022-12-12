@@ -1,5 +1,11 @@
 import { Works } from "./works.model";
 
+export interface ApiResponseWork {
+    status: string,
+    message_type: string,
+    message_version: string,
+    message: Works,
+}
 export interface ApiResponse {
     status: string,
     message_type: string,

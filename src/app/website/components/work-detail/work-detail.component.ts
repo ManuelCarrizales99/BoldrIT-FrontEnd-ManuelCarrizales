@@ -1,14 +1,17 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input} from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { ApiResponseWork } from 'src/app/models/apiResponse.model';
 import { Works } from 'src/app/models/works.model';
-
-
+import { WorksService } from 'src/app/services/works.service';
 @Component({
-  selector: 'app-work',
-  templateUrl: './work.component.html',
-  styleUrls: ['./work.component.scss']
+  selector: 'app-work-detail',
+  templateUrl: './work-detail.component.html',
+  styleUrls: ['./work-detail.component.scss']
 })
-export class WorkComponent {
-  @Output() showWork = new EventEmitter<string>();
+export class WorkDetailComponent {
+
+
+  apiResponse: ApiResponseWork | null = null;
   @Input() work: Works = {
     institution: {
       name: '',
@@ -255,12 +258,9 @@ export class WorkComponent {
     article_number:'',
   };
 
+  constructor(private route: ActivatedRoute, private worksServices: WorksService){}
+
   ngOnInit(){
   }
-
-  onShowDetail(){
-    this.showWork.emit(this.work.DOI);
-  }
-  
 
 }

@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ViewChild, Input} from '@angular/core';
+import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
@@ -14,6 +14,8 @@ import { ApiResponse } from 'src/app/models/apiResponse.model';
 export class DataTableComponent implements AfterViewInit {
   works: Works[] = [];
   apiResponse: ApiResponse | null = null; 
+  row = 50;
+  offset = 0;
 
   displayedColumns: string[] = ['publisher', 'title', 'type', 'URL'];
   dataSource = new MatTableDataSource<Works>;
@@ -28,21 +30,19 @@ export class DataTableComponent implements AfterViewInit {
 
   ngOnInit(){
     this.getWorks();
-    console.log('Datasource',this.dataSource)
   }
 
   ngAfterViewInit() {
-    // this.dataSource.paginator = this.paginator;
-    // this.dataSource.sort = this.sort;
+    this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
   }
 
   getWorks(){
-    console.log('paginator',this.paginator);
-    console.log('sort',this.sort)
-    this.worksService.getAllWorks(5,5).subscribe(data =>{
+    this.worksService.getAllWorks(this.row).subscribe(data =>{
       this.apiResponse = data;
       if(data.message.items.length > 0){
         this.works = this.apiResponse.message.items; 
+        this.offset += this.row;
       }
       this.refreshMaterial();
     });
