@@ -1,4 +1,4 @@
-import { Component, Input} from '@angular/core';
+import { Component, EventEmitter, Input, Output} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ApiResponseWork } from 'src/app/models/apiResponse.model';
 import { Works } from 'src/app/models/works.model';
@@ -10,7 +10,7 @@ import { WorksService } from 'src/app/services/works.service';
 })
 export class WorkDetailComponent {
 
-
+  @Output() close = new EventEmitter<boolean>();
   apiResponse: ApiResponseWork | null = null;
   @Input() work: Works = {
     institution: {
@@ -261,6 +261,10 @@ export class WorkDetailComponent {
   constructor(private route: ActivatedRoute, private worksServices: WorksService){}
 
   ngOnInit(){
+  }
+
+  closeModal(){
+    this.close.emit(false);
   }
 
 }

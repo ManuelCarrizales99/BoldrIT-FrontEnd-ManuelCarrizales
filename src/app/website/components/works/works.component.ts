@@ -10,6 +10,7 @@ import { WorksService } from 'src/app/services/works.service';
 })
 export class WorksComponent implements AfterViewInit {
   modalActive = false;
+  loading: boolean = true;
   works: Works[] = [];
   work: Works = {
     institution: {
@@ -259,7 +260,9 @@ export class WorksComponent implements AfterViewInit {
   row = 10;
   offset = 0;
   apiResponse: ApiResponse | null = null; 
-  constructor(private worksService: WorksService){}
+  constructor(private worksService: WorksService){
+    this.loading = true;
+  }
 
   ngOnInit(){
     this.getWorks();
@@ -268,26 +271,37 @@ export class WorksComponent implements AfterViewInit {
   ngAfterViewInit() {
     
   }
+
+  onCloseModal(close: boolean){
+    this.modalActive = close;
+  }
+
   getWorks(){
+    this.loading = true;
     this.worksService.getAllWorks(this.row,this.offset).subscribe(data =>{
       this.apiResponse = data;
       this.works = this.apiResponse.message.items;
       this.offset += this.row;
     });
+    this.loading = false;
   }
 
   onShowDetail(doi:string){
+    this.loading = true;
     this.worksService.getWorkDoi(doi).subscribe(work =>{
       this.work = work.message
     })
+    this.loading = false;
     this.modalActive = true;
   }
 
   onLoadMore(){
+    this.loading = true;
     this.worksService.getAllWorks(this.row, this.offset).subscribe(data =>{
       this.works = this.works.concat(data.message.items);
       this.offset += this.row;
     })
+    this.loading = false;
   }
 
 }

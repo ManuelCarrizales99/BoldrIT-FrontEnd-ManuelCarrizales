@@ -1,3 +1,7 @@
+<!-- <div class="load" *ngIf="loading">
+    <img src="./assets/images/loading.gif" alt="">
+</div> -->
+
 <div class="worksGrid">
     <app-work (showWork)="onShowDetail($event)" *ngFor="let work of works" [work]="work"></app-work>
     <button class="btn btn-secondary" (click)="onLoadMore()"> Load More</button>
@@ -6,6 +10,6 @@
 
 <div class="work-detail" [class.active]="modalActive" >
     <div *ngIf="modalActive">
-        <app-work-detail [work]="work"></app-work-detail>
+        <app-work-detail (close)="onCloseModal($event)" [work]="work"></app-work-detail>
     </div>
 </div>
